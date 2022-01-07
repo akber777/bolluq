@@ -30,7 +30,9 @@ const MultiSlider = ({ items, title, id }) => {
           <SplideSlide key={item.id}>
             <div className="productSlider__items">
               <div className="productSlider__items--img">
-                <img id={id} src={item.image} alt={item.title} />
+                <a href={item?.link} target={"_blank"}>
+                  <img id={id} src={item.image} alt={item.title} />
+                </a>
               </div>
             </div>
           </SplideSlide>

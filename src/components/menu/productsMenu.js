@@ -121,14 +121,6 @@ const ProductsMenu = ({ data, type }) => {
                 data.dryFood.map((item) => (
                   <Link to={`/${type}/category/${item.slug}`} key={item.id}>
                     <span
-                      className={
-                        pathname
-                          .split("/")
-                          [pathname.split("/").length - 1].toUpperCase() ==
-                        item.title.toUpperCase()
-                          ? "activeSpan"
-                          : ""
-                      }
                       ref={(e) => (allSpan.current[item.id] = e)}
                       onClick={(e) => {
                         allSpan.current.forEach((element) => {
@@ -168,14 +160,14 @@ const ProductsMenu = ({ data, type }) => {
                 data.confectionery.map((item) => (
                   <Link to={`/${type}/category/${item.slug}`} key={item.id}>
                     <span
-                      className={
-                        pathname
-                          .split("/")
-                          [pathname.split("/").length - 1].toUpperCase() ==
-                        item.title.toUpperCase()
-                          ? "activeSpan"
-                          : ""
-                      }
+                      // className={
+                      //   pathname
+                      //     .split("/")
+                      //     [pathname.split("/").length - 1].toUpperCase() ==
+                      //   item.title.toUpperCase()
+                      //     ? "activeSpan"
+                      //     : ""
+                      // }
                       ref={(e) => (allSpan.current[item.id] = e)}
                       onClick={(e) => {
                         allSpan.current.forEach((element) => {

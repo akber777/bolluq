@@ -24,13 +24,13 @@ const Header = ({ headerId, lang, isHide, hide, dispatchSearch, settings }) => {
   const headerRef = useRef("");
 
   useEffect(() => {
-    window.onscroll = function () {
+    window.addEventListener("scroll", function () {
       if (this.scrollY > 120) {
         headerRef.current.classList.add("fixedHeader");
       } else {
         headerRef.current.classList.remove("fixedHeader");
       }
-    };
+    });
   });
 
   const {
@@ -158,7 +158,7 @@ const Header = ({ headerId, lang, isHide, hide, dispatchSearch, settings }) => {
                 <Link to="/news">Xeberler</Link>
               </div>
             </div>
-            <Link to={"/branch"}>
+            {/* <Link to={"/branch"}>
               <svg
                 width={15}
                 height={15}
@@ -169,7 +169,7 @@ const Header = ({ headerId, lang, isHide, hide, dispatchSearch, settings }) => {
                 <circle cx="7.5" cy="7.5" r="7.5" fill="#BF0807" />
               </svg>
               FİLİALLAR
-            </Link>
+            </Link> */}
             <div className="mobParent">
               <p>
                 <svg
@@ -472,9 +472,9 @@ const Header = ({ headerId, lang, isHide, hide, dispatchSearch, settings }) => {
                   <NavLink to={`/about`} className="header__nav--item">
                     {t("BİZ KİMİK")}
                   </NavLink>
-                  <NavLink to={`/branch`} className="header__nav--item">
+                  {/* <NavLink to={`/branch`} className="header__nav--item">
                     {t("FİLİALLAR")}
-                  </NavLink>
+                  </NavLink> */}
                   <NavLink to={`/our-products`} className="header__nav--item">
                     {t("MEHSULLAR")}
                   </NavLink>

@@ -10,11 +10,13 @@ import { foreignBrands } from "../queries/queries";
 // css
 import "../assets/css/_products.scss";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const ProductsExternal = () => {
   const [page, setPage] = useState(0);
   const totalRef = useRef(null);
   const { slug } = useParams();
+  const { t } = useTranslation();
 
   const { data, isLoading } = useQuery(
     ["foreignBrands", slug !== undefined ? "/" + slug : "", page],
@@ -29,7 +31,7 @@ const ProductsExternal = () => {
 
   return (
     <div className="products">
-      <Title title={"MƏHSULLAR"} />
+      <Title title={t("mehsullar")} />
       <Container>
         <div className="products__wrapper">
           <ProductsMenu type="external-products" data={data} />

@@ -33,7 +33,7 @@ const Footer = ({ dispatchSettings }) => {
     closeRef.current.onclick = () => {
       sendMessageBox.current.classList.add("opacityNone");
     };
-  }, [pathname]);
+  });
 
   const { data, isLoading } = useQuery(["setting"], settingApi, {
     refetchOnWindowFocus: false,
@@ -188,7 +188,7 @@ const Footer = ({ dispatchSettings }) => {
         </div>
         <div className="d-flex flexBoxFooter justify-content-between">
           <div className="footer__items hide">
-            <h3>Biz kimik</h3>
+            <h3>{t("bizkimik")}</h3>
             <NavLink to={"/about"}>{t("haqqimizda")}</NavLink>
             <NavLink to={"/history"}>{t("tariximiz")}</NavLink>
             <NavLink to={"/principles"}>{t("deyerlerimiz")}</NavLink>
@@ -197,12 +197,12 @@ const Footer = ({ dispatchSettings }) => {
             <NavLink to={"/news"}>{t("xeberler")}</NavLink>
           </div>
           <div className="footer__items hide">
-            <h3>Məhsullar</h3>
+            <h3>{t("mehsullar")}</h3>
             <NavLink to={"/our-products"}>{t("bizimmarkalar")}</NavLink>
             <NavLink to={"/external-products"}>{t("xaricimarkalar")}</NavLink>
           </div>
           <div className="footer__items hide">
-            <h3>İnsan Resursları</h3>
+            <h3>{t("insanresurslari")}</h3>
             <NavLink to={"/internship"}>{t("tecrubeproqramlari")}</NavLink>
             <NavLink to={"/rules"}>{t("isemuracietqaydalari")}</NavLink>
             <NavLink to={"/vacancies"}>{t("vakansiyalar")}</NavLink>
@@ -381,23 +381,10 @@ const Footer = ({ dispatchSettings }) => {
                 </a>
                 <a
                   className="show"
-                  href={` https://wa.me/${data.data.whatsapp}`}
+                  href={`${data.data.youtube}`}
                   target={"_blank"}
                 >
-                  <svg
-                    width={16}
-                    height={15}
-                    viewBox="0 0 16 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M13.4467 2.17987C12.0434 0.774902 10.1771 0.000823973 8.18881 0C4.09183 0 0.757477 3.33426 0.755829 7.43234C0.75528 8.74237 1.0975 10.0212 1.74799 11.1484L0.693481 15L4.63382 13.9664C5.71954 14.5586 6.94186 14.8707 8.18579 14.8711H8.1889C12.2854 14.8711 15.6201 11.5366 15.6217 7.43829C15.6225 5.45215 14.8501 3.58475 13.4467 2.17987ZM8.18881 13.6158H8.18625C7.07773 13.6154 5.99054 13.3174 5.04187 12.7547L4.81638 12.6207L2.47812 13.2341L3.10223 10.9544L2.95529 10.7206C2.33685 9.737 2.01028 8.6001 2.01083 7.4328C2.01212 4.02658 4.7836 1.25537 8.19128 1.25537C9.84143 1.25592 11.3926 1.89935 12.559 3.06711C13.7254 4.23486 14.3673 5.78705 14.3668 7.43783C14.3653 10.8443 11.594 13.6158 8.18881 13.6158ZM11.5775 8.98883C11.3919 8.89581 10.4787 8.44665 10.3084 8.38458C10.1383 8.3226 10.0144 8.29175 9.89068 8.4776C9.76681 8.66345 9.41095 9.08185 9.30255 9.20572C9.19415 9.32968 9.08594 9.34524 8.90018 9.25223C8.71442 9.1593 8.11603 8.9631 7.40658 8.33038C6.85452 7.83792 6.48181 7.22974 6.37341 7.04388C6.2652 6.85785 6.3725 6.76703 6.45489 6.66486C6.65594 6.41519 6.85727 6.15344 6.91916 6.02957C6.98114 5.90561 6.9501 5.79712 6.90359 5.70419C6.85727 5.61127 6.48584 4.69711 6.33111 4.32513C6.18024 3.96313 6.02725 4.01202 5.91318 4.00635C5.80496 4.00095 5.68109 3.99985 5.55722 3.99985C5.43344 3.99985 5.23221 4.04626 5.06192 4.2323C4.89172 4.41824 4.41199 4.86749 4.41199 5.78165C4.41199 6.6958 5.07748 7.57892 5.17032 7.70288C5.26315 7.82684 6.47998 9.70276 8.34299 10.5071C8.7861 10.6987 9.13199 10.8128 9.40179 10.8984C9.84674 11.0398 10.2515 11.0198 10.5716 10.972C10.9284 10.9187 11.6703 10.5227 11.8252 10.0889C11.9799 9.65506 11.9799 9.28326 11.9334 9.20572C11.8871 9.12826 11.7632 9.08185 11.5775 8.98883Z"
-                      fill="white"
-                    />
-                  </svg>
+                  <i class="fab fa-youtube" id="iconYoutube"></i>
                 </a>
                 <a href={data.data.twitter} target={"_blank"}>
                   <svg
